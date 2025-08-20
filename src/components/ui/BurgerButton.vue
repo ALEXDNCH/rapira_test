@@ -1,6 +1,6 @@
 <script setup lang="ts">
-defineProps<{ open: boolean }>()
-defineEmits<{ (e: 'toggle'): void }>()
+defineProps<{ open: boolean }>();
+defineEmits<{ (e: "toggle"): void }>();
 </script>
 
 <template>
@@ -41,9 +41,15 @@ defineEmits<{ (e: 'toggle'): void }>()
     opacity 150ms ease,
     top 200ms ease;
 
-  &.line--1 { top: 0; }
-  &.line--2 { top: 9px; }
-  &.line--3 { top: 18px; }
+  &.line--1 {
+    top: 0;
+  }
+  &.line--2 {
+    top: 9px;
+  }
+  &.line--3 {
+    top: 18px;
+  }
 }
 
 .is-open {

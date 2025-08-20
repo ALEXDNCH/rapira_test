@@ -20,3 +20,5 @@ export interface IBlogItem {
   image: string;
   comments: IBlogComment[];
 }
+
+export type TCategoryId = IBlogItem["categories"][number];

@@ -1,4 +1,4 @@
-import type {IMainPage} from "@/types/routes";
+import type { IMainPage } from "@/types/routes";
 
 export const PAGES = [
   {
@@ -18,6 +18,6 @@ export const PAGES = [
 
 type RouteName = (typeof MAIN_PAGES)[number]["name"];
 
-export const route = (name: RouteName) => ({name});
+export const route = (name: RouteName) => ({ name });
 
 export const MAIN_PAGES: readonly IMainPage[] = PAGES;

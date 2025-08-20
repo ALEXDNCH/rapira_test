@@ -1,5 +1,5 @@
-import {describe, it, expect} from "vitest";
-import {formatDate} from "../formatDate/index.ts";
+import { describe, it, expect } from "vitest";
+import { formatDate } from "../formatDate/index.ts";
 
 describe("formatDate", () => {
   const dateStr = "2024-04-09T11:54:00";

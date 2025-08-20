@@ -5,16 +5,21 @@
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-black);
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
 }
 
 @theme {
-  --color-primary: #f1f1f2;
-  --color-blue: #2884ef;
-
-  --breakpoint-xs: 35rem;
+  --color-primary: #3e97ff;
+  --color-primary-light: #eef6ff;
+  --color-primary-active: #2884ef;
+  --color-bg: #f1f1f2;
 }
 
 .container {
-  @apply mx-auto max-w-[1300px];
+  @apply mx-auto max-w-[1300px] px-2.5;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
 }

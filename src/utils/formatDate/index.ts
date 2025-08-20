@@ -2,7 +2,7 @@ export function formatDate(dateStr: string, format: "short" | "full" = "short"):
   const date = new Date(dateStr);
 
   const day = date.getDate();
-  const month = date.toLocaleString("ru-RU", {month: "short"});
+  const month = date.toLocaleString("ru-RU", { month: "short" });
   const year = date.getFullYear();
   const hours = String(date.getHours()).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");

@@ -1,5 +1,5 @@
-import {createRouter, createWebHistory} from "vue-router";
-import {MAIN_PAGES} from "@/constants/routes";
+import { createRouter, createWebHistory } from "vue-router";
+import { MAIN_PAGES } from "@/constants/routes";
 const MainLayout = () => import("@/layouts/MainLayout.vue");
 
 const routes = [
@@ -10,7 +10,7 @@ const routes = [
       path: p.path,
       name: p.name,
       component: p.component,
-      meta: {label: p.label, exact: !!p.exact},
+      meta: { label: p.label, exact: !!p.exact },
     })),
   },
 ];

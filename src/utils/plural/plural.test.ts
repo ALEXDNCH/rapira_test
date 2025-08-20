@@ -1,5 +1,5 @@
-import {describe, it, expect} from "vitest";
-import {pluralRu} from "./index";
+import { describe, it, expect } from "vitest";
+import { pluralRu } from "./index";
 
 describe("pluralRu (ru pluralization)", () => {
   it("works with other word sets", () => {
