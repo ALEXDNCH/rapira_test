@@ -2,7 +2,8 @@
 import type { IBlogItem } from "@/types/blog";
 import MyImage from "@/components/ui/MyImage.vue";
 import BlogMetaWrapper from "@/components/blog/BlogMetaWrapper.vue";
-import CategoryChips from "@/components/ui/CategoryChips.vue";
+import CategoryChip from "@/components/ui/CategoryChip.vue";
+import { CATEGORY_TITLE } from "@/data/categories.ts";
 
 defineProps<{
   item: IBlogItem;
@@ -27,7 +28,14 @@ defineProps<{
         {{ item.description }}
       </p>
       <!-- categories -->
-      <CategoryChips :categories="item.categories" class="mt-2.5" variant="plain" />
+      <div class="flex flex-wrap gap-2 mt-2.5">
+        <CategoryChip
+          v-for="id in item.categories"
+          :key="id"
+          :label="CATEGORY_TITLE[id]"
+          variant="plain"
+        />
+      </div>
     </div>
   </article>
 </template>

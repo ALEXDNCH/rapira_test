@@ -1,5 +1,3 @@
-import type { ICategory } from "@/types/blog";
-
 export const CATEGORIES = [
   { id: "city", title: "Город" },
   { id: "nature", title: "Природа" },
@@ -9,4 +7,13 @@ export const CATEGORIES = [
   { id: "drinks", title: "Напитки" },
   { id: "architecture", title: "Архитектура" },
   { id: "art", title: "Искусство" },
-] as const satisfies readonly ICategory[];
+] as const satisfies readonly { id: string; title: string }[];
+
+export type TCategory = (typeof CATEGORIES)[number];
+export type TCategoryId = TCategory["id"];
+
+export const CATEGORY_TITLE: Record<TCategoryId, TCategory["title"]> = (() => {
+  const map = {} as Record<TCategoryId, TCategory["title"]>;
+  for (const c of CATEGORIES) map[c.id] = c.title;
+  return map;
+})();

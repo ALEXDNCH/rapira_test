@@ -10,8 +10,8 @@
 
 @theme {
   --color-primary: #3e97ff;
-  --color-primary-light: #eef6ff;
   --color-primary-active: #2884ef;
+  --color-primary-light: #eef6ff;
   --color-bg: #f1f1f2;
 }
 

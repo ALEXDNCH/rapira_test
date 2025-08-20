@@ -1,7 +1,4 @@
-export interface ICategory {
-  id: string;
-  title: string;
-}
+import type { TCategoryId } from "@/data/categories.ts";
 
 export interface IBlogComment {
   name: string;
@@ -16,9 +13,7 @@ export interface IBlogItem {
   description: string;
   date: string;
   readTimeMin: number;
-  categories: string[];
+  categories: TCategoryId[];
   image: string;
   comments: IBlogComment[];
 }
-
-export type TCategoryId = IBlogItem["categories"][number];

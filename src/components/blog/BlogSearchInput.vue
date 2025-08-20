@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Search from "@/components/ui/icons/Search.vue";
-
+import X from "@/components/ui/icons/X.vue";
 const model = defineModel<string>({ default: "" });
 
 withDefaults(
@@ -33,7 +33,7 @@ withDefaults(
         type="button"
         @click="model = ''"
       >
-        <img alt="X" src="/images/x.svg" />
+        <X class="text-gray-500" />
       </button>
     </label>
   </div>
