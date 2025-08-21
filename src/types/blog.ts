@@ -5,6 +5,7 @@ export interface IBlogComment {
   surname: string;
   text: string;
   datetime: string;
+  avatarUrl?: string;
 }
 
 export interface IBlogItem {

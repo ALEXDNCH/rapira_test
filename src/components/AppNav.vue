@@ -48,23 +48,22 @@ const linkBaseClass = computed(() => [
     <RouterLink
       v-for="link in links"
       :key="link.id"
-      v-slot="{ href, navigate, isActive, isExactActive }"
+      v-slot="{ navigate, isActive, isExactActive }"
       :to="link.to"
     >
-      <a
+      <span
         :class="[
           linkBaseClass,
           'hover:text-primary',
           (link.exact ? isExactActive : isActive) ? ACTIVE : '',
         ]"
-        :href="href"
         @click="
           navigate();
           emit('navigate');
         "
       >
         {{ link.name }}
-      </a>
+      </span>
     </RouterLink>
   </nav>
 </template>

@@ -21,7 +21,7 @@ const emit = defineEmits<{ (e: "toggle"): void }>();
 
 const classes = computed(() => {
   const base =
-    "inline-flex select-none items-center gap-1.5 rounded-full text-sm font-medium px-3.5 py-2 transition";
+    "inline-flex select-none items-center gap-1.5 rounded-full text-sm font-medium px-3.5 py-1.5 transition";
 
   if (props.variant === "plain") {
     return [base, "bg-primary-light text-primary-active"];
@@ -44,7 +44,12 @@ const activeSvgClass = "absolute inset-0 w-3.5 h-3.5 transition-opacity duration
 </script>
 
 <template>
-  <button class="group" :class="classes" type="button" @click="handleClick">
+  <button
+    class="group"
+    :class="classes"
+    :tabindex="variant === 'plain' ? -1 : 0"
+    @click="handleClick"
+  >
     <span>{{ label }}</span>
 
     <template v-if="variant === 'filter'">

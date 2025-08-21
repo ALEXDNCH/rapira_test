@@ -5,28 +5,31 @@ import BlogMetaWrapper from "@/components/blog/BlogMetaWrapper.vue";
 import CategoryChip from "@/components/ui/CategoryChip.vue";
 import { CATEGORY_TITLE } from "@/data/categories.ts";
 
-defineProps<{
+import { openModal } from "@/composables/usePopup.ts";
+import PostPopup from "@/components/ui/popup/PostPopup.vue";
+import BlogTitle from "@/components/blog/BlogTitle.vue";
+import BlogDescription from "@/components/blog/BlogDescription.vue";
+
+const props = defineProps<{
   item: IBlogItem;
 }>();
+
+function showPostPopup() {
+  openModal(PostPopup, { post: props.item });
+}
 </script>
 
 <template>
   <article class="text-black">
-    <MyImage :alt="item.title" :image="`/images/gallery/${item.image}.png`" />
+    <MyImage :alt="item.title" class="cursor-pointer" :image="item.image" @click="showPostPopup" />
     <div class="mt-2.5">
       <BlogMetaWrapper
         :comments-count="item.comments.length"
         :date="item.date"
         :read-time-min="item.readTimeMin"
       />
-      <!-- title -->
-      <h2 class="text-xl font-semibold mt-2.5">
-        {{ item.title }}
-      </h2>
-      <!-- subtitle -->
-      <p class="text-black font-medium mt-2.5">
-        {{ item.description }}
-      </p>
+      <BlogTitle :text="item.title" variant="post" />
+      <BlogDescription :text="item.description" variant="post" />
       <!-- categories -->
       <div class="flex flex-wrap gap-2 mt-2.5">
         <CategoryChip

@@ -21,7 +21,7 @@ const filterIsActive = ref<boolean>(false);
 <template>
   <section class="bg-white">
     <div class="container">
-      <div class="flex flex-col py-3 md:py-5 px-7.5 md:px-11.5 gap-5">
+      <div class="flex flex-col py-3 md:py-5 md:px-11.5 gap-5">
         <div class="flex items-center flex-wrap md:flex-nowrap justify-between gap-5">
           <h3 class="text-lg md:text-3xl font-bold text-gray-900 order-1">Блог</h3>
           <BlogSearchInput

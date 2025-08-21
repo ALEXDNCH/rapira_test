@@ -13,6 +13,13 @@
   --color-primary-active: #2884ef;
   --color-primary-light: #eef6ff;
   --color-bg: #f1f1f2;
+  --color-danger: #f1416c;
+}
+
+@layer base {
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
 }
 
 .container {
